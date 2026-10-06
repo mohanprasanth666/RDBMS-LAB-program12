@@ -24,3 +24,57 @@ Associative Entity for Student-Course: Enrollment
 One-to-One Relationship: NOT REQUIRED
 
 Visual Diagram Created in MySQL Workbench: YES
+
+                 ┌──────────────────┐
+                 │    DEPARTMENT    │
+                 ├──────────────────┤
+                 │ Department_ID PK │
+                 │ Department_Name  │
+                 └────────┬─────────┘
+                          │
+                    1     │     M
+                          │
+                          ▼
+                 ┌──────────────────┐
+                 │     STUDENT      │
+                 ├──────────────────┤
+                 │ Student_ID PK    │
+                 │ Student_Name     │
+                 │ Email            │
+                 │ Department_ID FK │
+                 └────────┬─────────┘
+                          │
+                    M     │     M
+                          │
+                          ▼
+                 ┌──────────────────┐
+                 │     ENROLLMENT   │
+                 ├──────────────────┤
+                 │ Student_ID FK    │
+                 │ Course_ID FK     │
+                 │ Enrollment_Date  │
+                 └────────┬─────────┘
+                          │
+                    M     │     1
+                          │
+                          ▼
+                 ┌──────────────────┐
+                 │      COURSE      │
+                 ├──────────────────┤
+                 │ Course_ID PK     │
+                 │ Course_Name      │
+                 │ Credits          │
+                 │ Faculty_ID FK    │
+                 └────────┬─────────┘
+                          │
+                    M     │     1
+                          │
+                          ▼
+                 ┌──────────────────┐
+                 │     FACULTY      │
+                 ├──────────────────┤
+                 │ Faculty_ID PK    │
+                 │ Faculty_Name     │
+                 │ Specialization   │
+                 └──────────────────┘
+
